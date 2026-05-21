@@ -48,9 +48,5 @@ For link prediction:
 - A scoring function (e.g., dot product) predicts whether an edge exists between node pairs  
 
 This enables the model to learn complex relationships beyond simple graph heuristics.
-
-As a result, they cannot capture complex relationships that GNNs can learn from both structure and features.
-
-
 Graph structure
 Node features
