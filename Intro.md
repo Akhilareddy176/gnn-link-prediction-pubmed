@@ -3,38 +3,51 @@
 Link prediction aims to determine whether an edge should exist between two nodes in a graph.
 
 In this project, the graph is a citation network:
-- Nodes = papers  
-- Edges = citations  
+- G = (V, E)  
+- V (nodes) = papers  
+- E (edges) = citations  
 
-Formally: G = (V, E), where V = papers and E = citations.  
 Goal: predict missing edges.
-
-The model uses graph structure and node features to identify potential links, enabling tasks like recommending relevant papers or discovering related research.
-
 ---
-
 ## Graph Neural Networks (GNNs)
 
-GNNs learn from graph-structured data by aggregating information from neighboring nodes to generate meaningful representations.
+GNNs learn from graph-structured data by aggregating information from neighboring nodes to create meaningful representations.
+
+By using both graph structure and node features, they can predict links between nodes.
 
 ---
 
-## Applications (beyond citation networks)
+## Applications
 
+- Citation networks: paper recommendation, missing citation discovery  
 - Social networks: friend recommendation  
 - E-commerce: product recommendation  
 - Fraud detection: suspicious activity  
-- Biology: protein interactions, drug discovery  
+- Biology: protein interactions  
 - Knowledge graphs: relation prediction
-
+  
 ## Limitations of Traditional Methods
 
-Traditional link prediction methods rely on graph heuristics such as common neighbors, Jaccard similarity, or preferential attachment.
+Traditional link prediction methods use graph heuristics like common neighbors or Jaccard similarity.
 
-These approaches fail because:
+However:
 - They use only graph structure and ignore node features  
-- They rely on hand-crafted rules instead of learning patterns  
-- They do not generalize well across different graphs  
+- They rely on fixed rules instead of learning patterns  
+- They do not generalize well  
+
+---
+
+## Approach
+
+ Graph Neural Networks (GNNs) are used to overcome these limitations.
+
+GNNs learn node embeddings by combining information from neighbors and node features, capturing both structure and similarity.This allows the model to capture both structural patterns and feature similarity.
+
+For link prediction:
+- Nodes are encoded into embeddings  
+- A scoring function (e.g., dot product) predicts whether an edge exists between node pairs  
+
+This enables the model to learn complex relationships beyond simple graph heuristics.
 
 As a result, they cannot capture complex relationships that GNNs can learn from both structure and features.
 
